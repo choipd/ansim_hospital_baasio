@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "BITableViewController.h"
 #import <baas.io/Baas.h>
 
 @implementation AppDelegate
@@ -15,14 +16,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //BaasClient Init
-    [Baasio setApplicationInfo:@"cetauri" applicationName:@"sandbox"];
+    [Baasio setApplicationInfo:@"ansim.me" applicationName:@"ansim.me"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] init];
+//    self.viewController = [[ViewController alloc] init];
+    self.tvc = [[BITableViewController alloc] initWithCollectionName:@"rawdata" withQuery:nil];
     
     //self.window.rootViewController = self.viewController;
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
+    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:self.tvc];
     [self.window makeKeyAndVisible];
     return YES;
 }
