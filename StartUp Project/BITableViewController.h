@@ -10,6 +10,8 @@
 #import "PullRefreshTableViewController.h"
 @interface BITableViewController : PullRefreshTableViewController
 
+@property (strong, nonatomic) NSMutableArray* data;
+
 -(id)initWithCollectionName:(NSString*) collectionName withQuery:(NSString*) ql;
 -(void)setupTableWithCollection:(NSString*)collectionName withQuery:(NSString*)ql;
 

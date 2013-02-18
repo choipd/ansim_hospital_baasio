@@ -13,7 +13,6 @@
 @interface BITableViewController () {
     NSString* _collection;
     NSString* _ql;
-    NSMutableArray* _data;
 }
 
 @end
@@ -54,7 +53,7 @@
     }
     
     BaasioQuery* q = [BaasioQuery queryWithCollection:_collection];
-    [q setLimit:200];
+    [q setLimit:100];
 
     if (_ql) {
         [q setWheres:_ql];
@@ -62,7 +61,7 @@
     
     [q queryInBackground:^(NSArray *objects) {
         NSLog(@"%@", [NSMutableArray arrayWithArray:objects]);
-        _data = [NSMutableArray arrayWithArray:objects];
+        self.data = [NSMutableArray arrayWithArray:objects];
         [self stopLoading];
         [self.tableView reloadData];
     } failureBlock:^(NSError *error) {
@@ -104,20 +103,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_data count];
+    return [self.data count];
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    cell.textLabel.text = [NSString stringWithFormat:@"cell %d", indexPath.row];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -127,9 +114,8 @@
     if (entityCell == nil) {
         entityCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    entityCell.textLabel.text = [NSString stringWithFormat:@"%d, %@",
-                                 indexPath.row,
-                                 [[_data objectAtIndex:indexPath.row] objectForKey:@"title"]];
+//    entityCell.textLabel.text = [NSString stringWithFormat:@"%@",
+//                                 [[self.data objectAtIndex:indexPath.row] objectForKey:@"title"]];
     return entityCell;
 }
 
