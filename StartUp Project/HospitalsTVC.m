@@ -7,6 +7,7 @@
 //
 
 #import "HospitalsTVC.h"
+#import "AppDelegate.h"
 
 @interface HospitalsTVC ()
 
@@ -27,4 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) refresh {
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [self setupTableWithCollection:@"hospitals" withQuery:
+        [NSString  stringWithFormat:@"location within 4000 of %f, %f",
+        appDelegate.bestEffortAtLocation.coordinate.latitude, appDelegate.bestEffortAtLocation.coordinate.longitude]];
+    [super refresh];
+}
 @end

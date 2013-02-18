@@ -11,4 +11,6 @@
 @interface BITableViewController : PullRefreshTableViewController
 
 -(id)initWithCollectionName:(NSString*) collectionName withQuery:(NSString*) ql;
+-(void)setupTableWithCollection:(NSString*)collectionName withQuery:(NSString*)ql;
+
 @end

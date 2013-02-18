@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		408063AC16CDDC7E0050799A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 408063AB16CDDC7E0050799A /* CoreLocation.framework */; };
 		40B3813416BD078C00085DF2 /* BITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B3813316BD078C00085DF2 /* BITableViewController.m */; };
 		40B3813816BD0CAA00085DF2 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B3813616BD0C2B00085DF2 /* PullRefreshTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		40B3813A16BD0D4D00085DF2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B3813916BD0D4D00085DF2 /* QuartzCore.framework */; };
 		40B3813D16BD194200085DF2 /* HospitalsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B3813C16BD194200085DF2 /* HospitalsTVC.m */; };
+		40C83B0A16CF94B100DE040E /* BIDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C83B0916CF94B100DE040E /* BIDetailViewController.m */; };
 		419F69741671B3EC009A89D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419F69731671B3EC009A89D1 /* ViewController.m */; };
 		419F6A0A1671E2AB009A89D1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 419F6A081671E2AB009A89D1 /* Icon.png */; };
 		419F6A0B1671E2AB009A89D1 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 419F6A091671E2AB009A89D1 /* Icon@2x.png */; };
@@ -44,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		408063AB16CDDC7E0050799A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		40B3813216BD078C00085DF2 /* BITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BITableViewController.h; sourceTree = "<group>"; };
 		40B3813316BD078C00085DF2 /* BITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BITableViewController.m; sourceTree = "<group>"; };
 		40B3813516BD0C2B00085DF2 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
@@ -51,6 +54,8 @@
 		40B3813916BD0D4D00085DF2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		40B3813B16BD194200085DF2 /* HospitalsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalsTVC.h; sourceTree = "<group>"; };
 		40B3813C16BD194200085DF2 /* HospitalsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalsTVC.m; sourceTree = "<group>"; };
+		40C83B0816CF94B100DE040E /* BIDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIDetailViewController.h; sourceTree = "<group>"; };
+		40C83B0916CF94B100DE040E /* BIDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDetailViewController.m; sourceTree = "<group>"; };
 		419F69721671B3EC009A89D1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		419F69731671B3EC009A89D1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		419F6A081671E2AB009A89D1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "StartUp Project/Icon.png"; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408063AC16CDDC7E0050799A /* CoreLocation.framework in Frameworks */,
 				40B3813A16BD0D4D00085DF2 /* QuartzCore.framework in Frameworks */,
 				AFA8E2B916B1571A00C4815C /* SystemConfiguration.framework in Frameworks */,
 				AFA8E2B716B1571300C4815C /* MobileCoreServices.framework in Frameworks */,
@@ -119,7 +125,6 @@
 		AFC7140F164005D4004BD21E = {
 			isa = PBXGroup;
 			children = (
-				40B3813916BD0D4D00085DF2 /* QuartzCore.framework */,
 				419F69ED1671E204009A89D1 /* image */,
 				AFC71424164005D4004BD21E /* StartUp Project */,
 				AFC71448164005D4004BD21E /* StartUp ProjectTests */,
@@ -140,6 +145,8 @@
 		AFC7141D164005D4004BD21E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				408063AB16CDDC7E0050799A /* CoreLocation.framework */,
+				40B3813916BD0D4D00085DF2 /* QuartzCore.framework */,
 				AFA8E2B816B1571A00C4815C /* SystemConfiguration.framework */,
 				AFA8E2B616B1571300C4815C /* MobileCoreServices.framework */,
 				AFA8E2AE16B154F100C4815C /* baas.io.framework */,
@@ -163,6 +170,8 @@
 				AFC71425164005D4004BD21E /* Supporting Files */,
 				40B3813216BD078C00085DF2 /* BITableViewController.h */,
 				40B3813316BD078C00085DF2 /* BITableViewController.m */,
+				40C83B0816CF94B100DE040E /* BIDetailViewController.h */,
+				40C83B0916CF94B100DE040E /* BIDetailViewController.m */,
 				40B3813516BD0C2B00085DF2 /* PullRefreshTableViewController.h */,
 				40B3813616BD0C2B00085DF2 /* PullRefreshTableViewController.m */,
 			);
@@ -319,6 +328,7 @@
 				40B3813416BD078C00085DF2 /* BITableViewController.m in Sources */,
 				40B3813816BD0CAA00085DF2 /* PullRefreshTableViewController.m in Sources */,
 				40B3813D16BD194200085DF2 /* HospitalsTVC.m in Sources */,
+				40C83B0A16CF94B100DE040E /* BIDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

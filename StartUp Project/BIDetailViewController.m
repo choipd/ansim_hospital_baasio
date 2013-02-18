@@ -1,35 +1,18 @@
 //
-//  BITableViewController.m
-//  StartUp Project
+//  BIDetailViewController.m
+//  BaasioTable
 //
-//  Created by Myungjin Choi on 13. 2. 2..
+//  Created by Myungjin Choi on 13. 2. 16..
 //  Copyright (c) 2013년 kth. All rights reserved.
 //
 
-#import "BITableViewController.h"
-#import <baas.io/Baas.h>
 #import "BIDetailViewController.h"
 
-@interface BITableViewController () {
-    NSString* _collection;
-    NSString* _ql;
-    NSMutableArray* _data;
-}
+@interface BIDetailViewController ()
 
 @end
 
-@implementation BITableViewController
-
-
-- (id) initWithCollectionName:(NSString*) collectionName withQuery:(NSString*) ql
-{
-    [self setupTableWithCollection:collectionName withQuery:ql];
-    self = [super init];
-    if (self) {
-        // custom initialization
-    }
-    return self;
-}
+@implementation BIDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,46 +23,10 @@
     return self;
 }
 
-- (void) setupTableWithCollection:(NSString*)collectionName withQuery:(NSString*)ql
-{
-    _collection = collectionName;
-    _ql = ql;
-    NSLog(@"[query]: %@",_ql);
-}
-
-- (void) query
-{
-    if (_collection == nil) {
-        [NSException raise:@"Collection is nil" format:@"Collection is nil"];
-    }
-    
-    BaasioQuery* q = [BaasioQuery queryWithCollection:_collection];
-    [q setLimit:200];
-
-    if (_ql) {
-        [q setWheres:_ql];
-    }
-    
-    [q queryInBackground:^(NSArray *objects) {
-        NSLog(@"%@", [NSMutableArray arrayWithArray:objects]);
-        _data = [NSMutableArray arrayWithArray:objects];
-        [self stopLoading];
-        [self.tableView reloadData];
-    } failureBlock:^(NSError *error) {
-        NSLog(@"%@", error.description);
-        [self stopLoading];
-    }];
-}
-
-- (void) refresh
-{
-    [self query];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -97,43 +44,27 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_data count];
+    return 0;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    cell.textLabel.text = [NSString stringWithFormat:@"cell %d", indexPath.row];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellName = @"entityCell";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UITableViewCell *entityCell = [tableView dequeueReusableCellWithIdentifier:cellName];
-    if (entityCell == nil) {
-        entityCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
-    }
-    entityCell.textLabel.text = [NSString stringWithFormat:@"%d, %@",
-                                 indexPath.row,
-                                 [[_data objectAtIndex:indexPath.row] objectForKey:@"title"]];
-    return entityCell;
+    // Configure the cell...
+    
+    return cell;
 }
-
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -178,8 +109,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     BIDetailViewController *detailViewController = [[BIDetailViewController alloc] init];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end
