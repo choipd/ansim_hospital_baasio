@@ -10,4 +10,6 @@
 
 @interface BIDetailViewController : UITableViewController
 
+@property (nonatomic, weak) NSDictionary* datum;
+
 @end

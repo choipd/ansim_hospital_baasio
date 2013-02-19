@@ -392,8 +392,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = $SRCROOT/header;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = $SRCROOT/lib;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"–Objc",
+					"–lstdc++",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -413,8 +419,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = $SRCROOT/header;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = $SRCROOT/lib;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"–Objc",
+					"–lstdc++",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -432,6 +444,10 @@
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
 				INFOPLIST_FILE = "StartUp Project/BaasioTable-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -453,6 +469,10 @@
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
 				INFOPLIST_FILE = "StartUp Project/BaasioTable-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

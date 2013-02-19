@@ -8,7 +8,6 @@
 
 #import "BITableViewController.h"
 #import <baas.io/Baas.h>
-#import "BIDetailViewController.h"
 
 @interface BITableViewController () {
     NSString* _collection;
@@ -160,12 +159,5 @@
 }
 */
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-     BIDetailViewController *detailViewController = [[BIDetailViewController alloc] init];
-     [self.navigationController pushViewController:detailViewController animated:YES];
-}
 
 @end

@@ -8,6 +8,8 @@
 
 #import "HospitalsTVC.h"
 #import "AppDelegate.h"
+#import "BIDetailViewController.h"
+
 
 @interface HospitalsTVC () {
     AppDelegate* _appDelegate;
@@ -56,6 +58,15 @@
     entityCell.detailTextLabel.text = [NSString stringWithFormat:@"%d m", (int)dist];
     
     return entityCell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BIDetailViewController *detailViewController = [[BIDetailViewController alloc] init];
+    detailViewController.datum = [self.data objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end
